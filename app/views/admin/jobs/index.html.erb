@@ -3,32 +3,30 @@
 </div>
 
 <br><br>
-<table class="table table-boldered">
+
+<table class="table table-boldered table-striped custab">
    <% @jobs.each do |job| %>
-   <tr>
-      <td>
-         <%= render_job_status(job) %>
-         <%= link_to(job.title, admin_job_path(job)) %>
-      </td>
+      <tr>
+         <td>
+            <%= render_job_status(job) %>
+            <%= link_to(job.title, admin_job_path(job)) %>
+         </td>
 
-      <td>
-         <%= link_to("Edit", edit_admin_job_path(job)) %>
-         <%= link_to("Destroy", admin_job_path(job), :method => :delete, :data => { :confirm => "Are you sure?"}) %>
+         <td>
+            <%= link_to edit_admin_job_path(job), class:"btn btn-xs btn-info" do %> <i class="fa fa-pencil"> </li> <% end %>
+            <%= link_to("Destroy", admin_job_path(job), :method => :delete, :class => "btn btn-xs btn-danger", :data => { :confirm => "Are you sure?" } )%>
 
-         <% if job.is_hidden%>
-            <%= link_to("Publish", publish_admin_job_path(job), :method => :post, :class => "btn btn-xs btn-default")%>
-         <% else %>
-            <%= link_to("Hide", hide_admin_job_path(job), :method => :post,  :class => "btn btn-xs btn-default")%>
-         <% end %>
+            <% if job.is_hidden %>
+               <%= link_to("Publish", publish_admin_job_path(job), :method => :post, :class => "btn btn-xs btn-success") %>
+               <% else %>
+               <%= link_to("Hide", hide_admin_job_path(job), :method => :post, :class => "btn btn-xs btn-warning") %>
+            <% end %>
+         </td>
 
-      </td>
-      <td>
-         <%= job.created_at %>
-      </td>
+         <td>
+            <%= job.created_at %>
+         </td>
 
-
-
-
-   </tr>
+      </tr>
    <% end %>
 </table>
