@@ -59,4 +59,8 @@ class Admin::JobsController < ApplicationController
       params.require(:job).permit(:title, :descriotion, :time_upper_bound, :time_lower_bound, :contact_email, :is_hidden)
    end
 
+
+
+
+
 end
