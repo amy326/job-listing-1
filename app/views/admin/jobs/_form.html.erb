@@ -2,8 +2,9 @@
    <div class="form-group">
       <%= f.input :title, input_html: { class: "form-control"} %>
       <%= f.input :description, input_html: { class: "form-control"}  %>
-      <%= f.input :time_lower_bound, :label => "薪资下限", input_html: { class: "form-control"}  %>
-      <%= f.input :time_upper_bound, :label => "薪资上限", input_html: { class: "form-control"}  %>
+   </br>
+      <%= f.input :time_lower_bound, :label => "领养开始",  class: "form-control" %>
+      <%= f.input :time_upper_bound, :label => "领养结束",  class: "form-control"  %>
       <%= f.input :contact_email, input_html: { class: "form-control"}  %>
       <%= f.input :is_hidden %>
 

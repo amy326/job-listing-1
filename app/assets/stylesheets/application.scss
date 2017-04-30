@@ -19,20 +19,21 @@
  @import "font-awesome";
 
 .jumbotron {
-   background-image:url('http://ww4.sinaimg.cn/large/006tNbRwgy1fevmh09i86j31kw0w0b2d.jpg');
+   background-image:url('http://ww2.sinaimg.cn/large/006tNbRwgy1ff4cvtxv3tj31kw11xu12.jpg');
    background-repeat: no-repeat;
+   background-attachment: fixed;
    background-size: cover;
    padding-bottom: 0px;
 }
 
 .title {
+   color: white;
    font-family: "Helvetica Neue", "Microsoft Yahei", 微软雅黑;
    text-align: left;
-   margin-top: 190px;
+   margin-top: 100px;
    margin-bottom: 10px;
    line-height: 20px;
    font-height: 10px;
-
 }
 
 .slogan {
@@ -49,7 +50,7 @@
 .lead {
    margin-bottom: 200px;
    text-align: center;
-   color: white;
+   color: orange;
    position: relative;
    top: 20px;
    right: 80px;
@@ -141,3 +142,30 @@
       margin : 0 -15px 20px;//顶部margin为0，因此可以直接接着导航栏；左右margin为负15，因此可以顶到浏览器边缘，抵消container-fluid的15px，左右padding；底部margin为20，会跟下面的内容撑开距离
       border-radius: 0;//圆角为0
       }
+      //---------Content---------
+
+       .content-section-a {
+           padding: 50px 0;
+           background-color: transparent;
+       }
+
+       .content-section-b {
+           padding: 50px 0;
+           border-top: 1px solid #e7e7e7;
+           border-bottom: 1px solid #e7e7e7;
+       }
+
+       .section-heading-spacer {
+           float: left;
+           width: 200px;
+           border-top: 3px solid #e7e7e7;
+       }
+
+       .section-heading {
+           margin-bottom: 30px;
+       }
+
+       .lead {
+           font-size: 18px;
+           font-weight: 400;
+       }
