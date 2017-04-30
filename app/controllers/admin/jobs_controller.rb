@@ -61,12 +61,24 @@ class Admin::JobsController < ApplicationController
     end
   end
 
+  def destroy
+     @job = Job.find(params[:id])
+     @job.destroy
+     redirect_to admin_jobs_path, alert: 'Job Deleted!'
+  end
 
 
    private
 
    def job_params
-      params.require(:job).permit(:title, :descriotion, :time_upper_bound, :time_lower_bound, :contact_email, :is_hidden)
+      params.require(:job).permit(:title, :descriotion, :time_upper_bound, :time_lower_bound, :contact_email, :is_hidden, :image)
+   end
+
+
+   def remove_img
+      @job = Job.find(params[:id])
+      @job.destroy
+      edirect_to admin_jobs_path, alert: 'Image Deleted!'
    end
 
 end
