@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170430032949) do
+ActiveRecord::Schema.define(version: 20170501022937) do
 
   create_table "jobs", force: :cascade do |t|
     t.string   "title"
@@ -19,9 +19,9 @@ ActiveRecord::Schema.define(version: 20170430032949) do
     t.datetime "updated_at",                      null: false
     t.string   "contact_email"
     t.boolean  "is_hidden",        default: true
-    t.datetime "time_upper_bound"
-    t.datetime "time_lower_bound"
     t.string   "image"
+    t.datetime "time_lower_bound"
+    t.datetime "time_upper_bound"
   end
 
   create_table "resumes", force: :cascade do |t|
