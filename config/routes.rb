@@ -5,6 +5,7 @@ Rails.application.routes.draw do
       resources :resumes
    end
    root 'welcome#index'
+   resources :tips
 
    namespace :admin do
       resources :jobs do

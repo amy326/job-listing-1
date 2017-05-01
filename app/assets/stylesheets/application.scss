@@ -24,13 +24,13 @@
    background-attachment: fixed;
    background-size: cover;
    padding-bottom: 0px;
+   color: white;
 }
 
 
 .title {
    font-family: "Helvetica Neue", "Microsoft Yahei", 微软雅黑;
    text-align: left;
-   position: inherit;
    margin-top: 150px;
    margin-bottom: 10px;
 
@@ -49,8 +49,7 @@
    color: white;
    font-family: "Helvetica Neue", "Microsoft Yahei", 微软雅黑;
    text-align: left;
-   position: inherit;
-   margin-top: 150px;
+   margin-top: 300px;
    margin-bottom: 10px;
    line-height: 20px;
    font-height: 10px;
@@ -211,5 +210,5 @@
           margin-bottom: 100px;
         }
 .admin_index{
-   margin : 20px 0 20px;
+   margin : 50px 0 20px;
 }
