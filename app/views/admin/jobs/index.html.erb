@@ -1,32 +1,121 @@
-<div class="pull-right">
-   <%= link_to("Add a job", new_admin_job_path, :class => "btn btn-default" ) %>
+<<<<<<< HEAD
+   <div class="panel panel-default">
+      <!-- Default panel contents -->
+     <div class="panel-heading">
+       <h3 class="panel-title">托管列表</h3>
+     </div>
+
+     <p class="panel-body">有了丁丁，主人轻松</p>
+
+     <!-- 4:3 aspect ratio -->
+     <!-- <div class="embed-responsive embed-responsive-4by3">
+       <iframe class="embed-responsive-item" src="//www.youtube.com/embed/zpOULjyy-n8?rel=0"></iframe>
+
+     </div>
+      -->
+
+
+     <!-- Table -->
+     <table class="table" >
+       <thead>
+          <tr>
+             <td>职缺</td>
+             <td>托管意愿数</td>
+             <td>托管开始</td>
+             <td>托管结束</td>
+             <td>管理选项</td>
+             <td>刊登时间</td>
+          </tr>
+
+       </thead>
+
+       <% @jobs.each do |job| %>
+
+
+             <tbody>
+                <tr>
+                   <td>
+                      <%= render_job_status(job) %>
+                      <%= link_to(job.title, admin_job_path(job)) %>
+                   </td>
+                   <td><%= link_to(job.resumes.count, admin_job_resumes_path(job)) %></td>
+                   <td><%= job.time_lower_bound.strftime("%d %b. %Y") %></td>
+                   <td><%= job.time_upper_bound.strftime("%d %b. %Y") %></td>
+                  <td>
+
+                     <%= link_to("Edit", edit_admin_job_path(job), :class => "btn btn-xs btn-info") %>
+                     <%= link_to("Destroy", admin_job_path(job), :method => :delete, :class => "btn btn-xs btn-danger", :data => { :confirm => "Are you sure?" }) %>
+
+                     <% if job.is_hidden %>
+                         <%= link_to("Publish", publish_admin_job_path(job), :method => :post, :class => "btn btn-xs btn-success") %>
+                         <% else %>
+                         <%= link_to("Hide", hide_admin_job_path(job), :method => :post, :class => "btn btn-xs btn-warning") %>
+                      <% end %>
+                   </td>
+
+                   <td>
+                      <%= job.created_at.strftime("%d %b. %Y") %>
+                   </td>
+
+
+
+                </tr>
+             </tbody>
+       <% end %>
+         </table>
+   </div>
+=======
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">See what you can do</h3>
+  </div>
+  <div class="panel-body">
+
+  <!-- Table -->
+    <table class="table">
+      <thead class="thead-default">
+         <tr>
+           <td>职位名称</td>
+           <td>收到履历数量</td>
+           <td>开始时间</td>
+           <td>结束时间</td>
+           <td>管理选项</td>
+           <td>刊登时间</td>
+         </tr>
+      </thead>
+
+      <% @jobs.each do |job| %>
+
+
+           <tbody>
+               <tr>
+                  <td>
+                     <%= render_job_status(job) %>
+                     <%= link_to(job.title, admin_job_path(job)) %>
+                  </td>
+                  <td><%= link_to(job.resumes.count, admin_job_resumes_path(job)) %></td>
+                  <td><%= job.time_lower_bound %></td>
+                  <td><%= job.time_upper_bound %></td>
+
+                  <td>
+                     <%= link_to("Edit", edit_admin_job_path(job), :class => "btn btn-xs btn-info" )%>
+                     <%= link_to("Delete", admin_job_path(job), :method => :delete, :class => "btn btn-xs btn-danger", :data => { :confirm => "Are you sure?" })%>
+
+                     <% if job.is_hidden %>
+                        <%= link_to("Publish", publish_admin_job_path(job), :method => :post, :class => "btn btn-xs btn-success") %>
+                        <% else %>
+                        <%= link_to("Hide", hide_admin_job_path(job), :method => :post, :class => "btn btn-xs btn-warning") %>
+                     <% end %>
+                  </td>
+
+                  <td>
+                     <%= job.created_at %>
+                  </td>
+
+               </tr>
+           </tbody>
+      <% end %>
+    </table>
+    </div>
 </div>
-
-<br><br>
-
-<table class="table table-boldered table-striped custab">
-   <% @jobs.each do |job| %>
-      <tr>
-         <td>
-            <%= render_job_status(job) %>
-            <%= link_to(job.title, admin_job_path(job)) %>
-         </td>
-
-         <td>
-            <%= link_to edit_admin_job_path(job), class:"btn btn-xs btn-info" do %> <i class="fa fa-pencil"> </li> <% end %>
-            <%= link_to("Destroy", admin_job_path(job), :method => :delete, :class => "btn btn-xs btn-danger", :data => { :confirm => "Are you sure?" } )%>
-
-            <% if job.is_hidden %>
-               <%= link_to("Publish", publish_admin_job_path(job), :method => :post, :class => "btn btn-xs btn-success") %>
-               <% else %>
-               <%= link_to("Hide", hide_admin_job_path(job), :method => :post, :class => "btn btn-xs btn-warning") %>
-            <% end %>
-         </td>
-
-         <td>
-            <%= job.created_at %>
-         </td>
-
-      </tr>
-   <% end %>
-</table>
+>>>>>>> origin/amy1

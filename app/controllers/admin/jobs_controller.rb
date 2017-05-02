@@ -53,10 +53,38 @@ class Admin::JobsController < ApplicationController
       @job.hide!
       redirect_to :back
    end
+
+   def require_is_admin
+    if !current_user.admin?
+      flash[:alert] = 'You are not admin'
+      redirect_to root_path
+    end
+  end
+
+  def destroy
+     @job = Job.find(params[:id])
+     @job.destroy
+     redirect_to admin_jobs_path, alert: 'Job Deleted!'
+  end
+
+
    private
 
    def job_params
-      params.require(:job).permit(:title, :descriotion, :wage_upper_bound, :wage_lower_bound, :contact_email, :is_hidden)
+<<<<<<< HEAD
+      params.require(:job).permit(:title, :descriotion, :time_upper_bound, :time_lower_bound, :contact_email, :is_hidden, :image)
    end
+
+
+   def remove_img
+      @job = Job.find(params[:id])
+      @job.destroy
+      edirect_to admin_jobs_path, alert: 'Image Deleted!'
+=======
+      params.require(:job).permit(:title, :description, :time_upper_bound, :time_lower_bound, :contact_email, :is_hidden)
+>>>>>>> origin/amy1
+   end
+
+
 
 end

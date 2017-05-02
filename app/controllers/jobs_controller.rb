@@ -11,9 +11,9 @@ class JobsController < ApplicationController
    def index
       @jobs = case params[:order]
       when 'by_lower_bound'
-         Job.published.order('wage_lower_bound DESC')
+         Job.published.order('time_lower_bound DESC')
       when 'by_upper_bound'
-         Job.published.order('wage_upper_bound DESC')
+         Job.published.order('time_upper_bound DESC')
       else
          Job.published.recent
       end
@@ -57,7 +57,12 @@ class JobsController < ApplicationController
    private
 
    def job_params
-      params.require(:job).permit(:title, :description, :wage_upper_bound, :wage_lower_bound, :contact_email)
+<<<<<<< HEAD
+      params.require(:job).permit(:title, :description, :time_upper_bound, :time_lower_bound, :contact_email, :image)
+=======
+      params.require(:job).permit(:title, :description, :time_upper_bound, :time_lower_bound, :contact_email)
+         
+>>>>>>> origin/amy1
    end
 
 

@@ -1,3 +1,59 @@
+<<<<<<< HEAD
+<br>
+<div class="admin_index">
+   <div class="dropdown clearfix pull-right">
+       <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenuDivider" data-toggle="dropdown" aria-haspopup="true">
+       排序
+       <span class="caret" ></span>
+      </button>
+
+      <ul class="dropdown-menu" aria-labelledby="dropdownMenuDivider">
+         <li>
+         <%= link_to("按照寄养开始排序", jobs_path(:order => "by_lower_bound"))%>
+         </li>
+         <li>
+         <%= link_to("按照寄养结束排序", jobs_path(:order => "by_upper_bound"))  %>
+         </li>
+         <li>
+         <%= link_to("按照发表时间排序", jobs_path) %>
+         </li>
+      </ul>
+   </div>
+</div>
+   <div class="panel panel-default">
+      <!-- Default panel contents -->
+      <div class="panel-heading">
+       <h3 class="panel-title">托管列表</h3>
+      </div>
+         <!-- Table -->
+         <table class="table ">
+
+            <thead>
+               <tr>
+                  <th>职缺</th>
+                  <th>托管开始</th>
+                  <th>托管结束</th>
+                  <th>发布时间</th>
+                  <th>照片预览</th>
+               </tr>
+            </thead>
+
+            <tbody>
+            <% @jobs.each do |job| %>
+            <tr>
+               <td><%= link_to(job.title, job_path(job)) %></td>
+               <td><%= job.time_lower_bound.strftime("%d %b. %Y") %>  </td>
+               <td><%= job.time_upper_bound.strftime("%d %b. %Y") %>  </td>
+               <td><%= job.created_at.strftime("%d %b. %Y") %>></td>
+
+
+            </tr>
+            <% end %>
+
+         </table>
+   </div>
+</div>
+=======
 <div class="dropdown clearfix pull-right">
     <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenuDivider" data-toggle="dropdown" aria-haspopup="true">
     排序
@@ -6,10 +62,10 @@
 
    <ul class="dropdown-menu" aria-labelledby="dropdownMenuDivider">
       <li>
-      <%= link_to("按照薪资下限排序", jobs_path(:order => "by_lower_bound"))%>
+      <%= link_to("按照开始时间排序", jobs_path(:order => "by_lower_bound"))%>
       </li>
       <li>
-      <%= link_to("按照薪资上限排序", jobs_path(:order => "by_upper_bound"))  %>
+      <%= link_to("按照结束时间排序", jobs_path(:order => "by_upper_bound"))  %>
       </li>
       <li>
       <%= link_to("按照发表时间排序", jobs_path) %>
@@ -25,8 +81,8 @@
    <thead>
       <tr>
          <th>职缺</th>
-         <th>薪资上限</th>
-         <th>薪资下限</th>
+         <th>开始时间</th>
+         <th>结束时间</th>
          <th>刊登时间</th>
       </tr>
    </thead>
@@ -35,10 +91,11 @@
    <% @jobs.each do |job| %>
    <tr>
       <td><%= link_to(job.title, job_path(job)) %></td>
-      <td><%= job.wage_lower_bound %>  </td>
-      <td><%= job.wage_upper_bound %>  </td>
+      <td><%= job.time_lower_bound %>  </td>
+      <td><%= job.time_upper_bound %>  </td>
       <td><%= job.created_at %>></td>
    </tr>
    <% end %>
 
 </table>
+>>>>>>> origin/amy1
