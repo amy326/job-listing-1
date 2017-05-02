@@ -1,6 +1,7 @@
 <%= simple_form_for [:admin, @job] do |f| %>
    <div class="form-group">
       <%= f.input :title, input_html: { class: "form-control"} %>
+<<<<<<< HEAD
       <%= f.input :description, input_html: { class: "form-control"}  %>
    </br>
       <%= f.input :time_lower_bound, :label => "托管开始",  class: "form-control" %>
@@ -23,4 +24,19 @@
 
    <%= f.submit "Submit", class: "btn btn-primary", data: { disable_with: "Submiting..." }  %>
    <%= link_to("Undo", admin_jobs_path, class: "btn btn-primary" ) %>
+=======
+      <%= f.input :description, input_html: { class: "form-control"} %>
+   </br>
+      <%= f.input :time_lower_bound, :label => "开始时间" %>
+      <%= f.input :time_upper_bound, :label => "结束时间"  %>
+   </br>
+      <%= f.input :contact_email, input_html: { class: "form-control"}  %>
+      <%= f.input :is_hidden %>
+   </div>
+
+
+   <%= f.submit "Submit", class: "btn btn-primary", data: { disable_with: "Submiting..." } %>
+   <%= link_to("Undo", admin_jobs_path, class: "btn btn-primary")%>
+
+>>>>>>> origin/amy1
 <% end %>
