@@ -37,7 +37,7 @@
                       <%= render_job_status(job) %>
                       <%= link_to(job.title, admin_job_path(job)) %>
                    </td>
-                   <td><%= link_to(job.resumes.count, admin_job_resumes_path(job)) %></td>
+                   <td><%= job.resumes.count %></td>
                    <td><%= job.time_lower_bound.strftime("%d %b. %Y") %></td>
                    <td><%= job.time_upper_bound.strftime("%d %b. %Y") %></td>
                   <td>

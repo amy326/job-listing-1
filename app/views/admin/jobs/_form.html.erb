@@ -2,23 +2,15 @@
    <div class="form-group">
       <%= f.input :title, input_html: { class: "form-control"} %>
       <%= f.input :description, input_html: { class: "form-control"}  %>
-   </br>
+      </br>
       <%= f.input :time_lower_bound, :label => "托管开始",  class: "form-control" %>
       <%= f.input :time_upper_bound, :label => "托管结束",  class: "form-control"  %>
       <%= f.input :contact_email, input_html: { class: "form-control"}  %>
       <%= f.input :is_hidden %>
 
-   <!-- 上传图片 -->
-
-      <%= f.label :image %>
-         </br>
-      <%= f.file_field :image %>
-
-
-
+      <!-- 上传图片 -->
+      <%= f.input :image, as: :file%>
    </div>
-
-
 
 
    <%= f.submit "Submit", class: "btn btn-primary", data: { disable_with: "Submiting..." }  %>
