@@ -38,6 +38,7 @@ gem 'awesome_rails_console'
 <<<<<<< HEAD
 gem 'carrierwave'
 gem 'paperclip'
+gem 'mini_magick'
 
 =======
 >>>>>>> origin/amy1
