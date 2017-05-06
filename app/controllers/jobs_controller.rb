@@ -57,12 +57,9 @@ class JobsController < ApplicationController
    private
 
    def job_params
-<<<<<<< HEAD
+
       params.require(:job).permit(:title, :description, :time_upper_bound, :time_lower_bound, :contact_email, :image)
-=======
-      params.require(:job).permit(:title, :description, :time_upper_bound, :time_lower_bound, :contact_email)
-         
->>>>>>> origin/amy1
+
    end
 
 
