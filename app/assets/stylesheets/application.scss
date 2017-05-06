@@ -66,20 +66,11 @@
 
 }
 .lead {
-<<<<<<< HEAD
+
    margin-bottom: 60px;
    text-align:justify;
    color: black;
 
-=======
-   font-family: "Microsoft Yahei", 微软雅黑;
-   margin-bottom: 200px;
-   text-align: center;
-   color: rgba(33,33,33 ,1);
-   position: relative;
-   top: 20px;
-   right: 80px;
->>>>>>> origin/amy1
 }
 
 .caption {
@@ -181,7 +172,7 @@
       margin : 0 -15px 20px;//顶部margin为0，因此可以直接接着导航栏；左右margin为负15，因此可以顶到浏览器边缘，抵消container-fluid的15px，左右padding；底部margin为20，会跟下面的内容撑开距离
       border-radius: 0;//圆角为0
       }
-<<<<<<< HEAD
+
       //---------Content---------
 
        .content-section-a {
@@ -211,7 +202,7 @@
            font-weight: 100;
            margin : 0 -15px 20px;
        }
-=======
+
 
 
       //---------Footer---------
@@ -220,7 +211,6 @@
        }
 
 
->>>>>>> origin/amy1
        html {
           position: relative;
           min-height: 100%;
@@ -230,11 +220,11 @@
           /* Margin bottom by footer height */
           margin-bottom: 100px;
         }
-<<<<<<< HEAD
+
 .admin_index{
    margin : 50px 0 20px;
 }
-=======
+
         //---------Content---------
 
          .content-section-a {
@@ -358,4 +348,3 @@
          .login-help{
            font-size: 12px;
          }
->>>>>>> origin/amy1
