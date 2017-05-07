@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
    <head>
-      <title>We Want You </title>
+      <title>Dingding_at_home </title>
       <%= csrf_meta_tags %>
 
       <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -13,15 +13,13 @@
          <%= render "common/flashes"%>
          <div class="row">
             <div class="col-md-2">
-               <ul class="nav nav-pills nav-stacked" style="max-width: 200px; padding-top:20px;">
-                  <li class="active"><%= link_to("Job-Lists", admin_jobs_path) %> </li>
-               </ul>
+
                <br>
                <ul class="nav nav-pills nav-stacked" style="max-width: 300px; padding-top:20px;">
 
 
                      <li class="active">
-                        <%= link_to("Jobs", admin_jobs_path) %>
+                        <%= link_to("Jobs List", admin_jobs_path) %>
                         </br>
                         <%= link_to("Add a job", new_admin_job_path ) %>
                      </li>
