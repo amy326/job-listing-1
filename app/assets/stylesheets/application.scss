@@ -61,6 +61,7 @@
    color: white;
    top: 12px;
    position: relative;
+
    top: 200px;
    left: 100px;
 
@@ -218,6 +219,9 @@
        html {
           position: relative;
           min-height: 100%;
+          padding-left: 15px;
+          padding-right: 15px;
+          
         }
 
         body {
