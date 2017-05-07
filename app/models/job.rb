@@ -1,8 +1,9 @@
 class Job < ApplicationRecord
 
    mount_uploader :image, ImageUploader
-
    validates :title, presence: true
+   validates :time_lower_bound, presence: true
+   validates :time_upper_bound, presence: true
 
    has_many :resumes
    scope :published, -> { where(is_hidden: false)}
