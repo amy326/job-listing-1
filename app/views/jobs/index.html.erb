@@ -45,7 +45,14 @@
                <td><%= job.time_lower_bound.strftime("%d %b. %Y") %>  </td>
                <td><%= job.time_upper_bound.strftime("%d %b. %Y") %>  </td>
                <td><%= job.created_at.strftime("%d %b. %Y") %>></td>
-
+               <td><%= link_to job_path(job) do %>
+                     <% if job.image.present? %>
+                        <%= image_tag(job.image.thumb.url, class: "thumbnail")%>
+                     <% else %>
+                        <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail")%>
+                     <% end %>
+                  <% end %>
+               </td>
 
             </tr>
             <% end %>
